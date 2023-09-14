@@ -46,7 +46,7 @@ bool ESC_APD_Telem::update() {
                 // valid stop byte, check the CRC
                 if (crc_fletcher16(received.bytes, 18) == received.packet.checksum) {
                     // valid packet, copy the data we need and reset length
-                    // SKYWAYS start
+                    // SKYWAYS begin
                     // There's no ESC status dronecan field, so hijacking error_count
                     decoded.error_count = le32toh(received.packet.status_flags);
                     // SKYWAYS end
