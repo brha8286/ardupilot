@@ -40,7 +40,7 @@ private:
             uint32_t erpm;
             uint16_t input_duty;
             uint16_t motor_duty;
-            // SKYWAYS start
+            // SKYWAYS begin
             uint8_t status_flags;
             uint8_t reserved1;
             // SKYWAYS end
