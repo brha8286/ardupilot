@@ -48,7 +48,7 @@ bool ESC_APD_Telem::update() {
                     // valid packet, copy the data we need and reset length
                     // SKYWAYS start
                     // There's no ESC status dronecan field, so hijacking error_count
-                    decoded.error_count = le32toh(received.packet.status_flags);
+                    decoded.error_count = static_cast<uint32_t>(received.packet.status_flags);
                     // SKYWAYS end
                     decoded.voltage = le16toh(received.packet.voltage) * 1e-2f;
                     decoded.temperature = convert_temperature(le16toh(received.packet.temperature));
